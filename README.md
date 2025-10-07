@@ -1,7 +1,7 @@
 # AuraLens – DeFi Portfolio Companion (Chrome Extension)
 
 <div align="center">
-  <img src="assets/logo-1.png" alt="AuraLens" width="140" height="140" />
+  <img src="extension/assets/logo-1.png" alt="AuraLens" width="140" height="140" />
   <br/>
   <em>AI‑assisted DeFi portfolio insights and strategy recommendations powered by AdEx AURA.</em>
 </div>
