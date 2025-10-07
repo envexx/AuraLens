@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraLens - DeFi Portfolio</title>
+    <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div style="text-align: center;">
+            <div class="loading-logo">
+                <img src="../assets/logo.svg" alt="AuraLens">
+            </div>
+            <h1>AuraLens</h1>
+            <p>Your DeFi Portfolio Companion</p>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="../assets/logo.svg" alt="AuraLens" class="logo-small">
+                <h1>AuraLens</h1>
+            </div>
+            <div class="header-actions">
+                <button id="walletBtn" class="btn-icon" aria-label="Wallets">
+                    <img class="themed-icon" src="https://img.icons8.com/material-outlined/24/wallet.png" alt="wallet" width="20" height="20" />
+                </button>
+                <button id="settingsBtn" class="btn-icon" aria-label="Settings">
+                    <img class="themed-icon" src="https://img.icons8.com/material-outlined/24/settings--v1.png" alt="settings--v1" width="20" height="20" />
+                </button>
+            </div>
+        </header>
+        
+
+        
+
+        <!-- Portfolio Chart Card -->
+        <div class="chart-card">
+            <h2>Portfolio Overview</h2>
+            <canvas id="portfolioChart" height="200"></canvas>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button id="strategyTab" class="tab active">Strategies</button>
+                <button id="assetsTab" class="tab">Assets</button>
+            </div>
+
+            <div id="strategyContent" class="tab-content"></div>
+
+            <div id="assetsContent" class="tab-content hidden"></div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button id="closeSettings" class="modal-close" aria-label="Close settings">
+                    <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="settings-group">
+                <div class="setting-item">
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span>Auto Refresh</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoRefresh">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallets Modal -->
+    <div id="walletsModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Wallets</h3>
+                <button id="closeWallets" class="modal-close" aria-label="Close wallets">
+                    <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="settings-group">
+                <div id="walletsList"></div>
+                <div class="wallet-input-group">
+                    <input type="text" id="addWalletInput" placeholder="Enter wallet address (0x...)" class="input-field">
+                    <button id="confirmAddWallet" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/popup.js"></script>
+</body>
+</html>
+

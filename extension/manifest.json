@@ -1,0 +1,23 @@
+﻿{
+  "manifest_version": 3,
+  "name": "AuraLens - DeFi Portfolio",
+  "description": "Your DeFi Portfolio Companion",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AuraLens"
+  },
+  "icons": {
+    "16": "assets/logo.svg",
+    "32": "assets/logo.svg",
+    "48": "assets/logo.svg",
+    "128": "assets/logo.svg"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://aura.adex.network/*"
+  ]
+}
+

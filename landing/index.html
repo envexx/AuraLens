@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraLens - DeFi Portfolio Companion</title>
+  <meta name="description" content="AuraLens is a Chrome Extension that analyzes your DeFi portfolio with AI and recommends optimal strategies.">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="AuraLens" class="logo">
+        <span class="brand-name">AuraLens</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#install">Install</a>
+        <a href="#demo">Demo</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn ghost" aria-label="Toggle theme">Theme</button>
+        <a class="btn primary" href="#install">Add to Chrome</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Smarter DeFi Decisions, Right in Your Wallet.</h1>
+          <p>AuraLens is a Chrome Extension that analyzes your portfolio with AI and recommends optimal DeFi strategies.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#install">Get AuraLens for Chrome</a>
+            <a class="btn ghost" href="#demo">Watch Demo</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/hero-extension.png" alt="AuraLens Extension Mockup" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+          <div class="card feature">
+            <img src="assets/features/overview.svg" alt="Portfolio Overview" class="feature-icon">
+            <h3>Portfolio Overview</h3>
+            <p>See your token balances across chains with a clean, real-time portfolio view.</p>
+          </div>
+          <div class="card feature">
+            <img src="assets/features/ai.svg" alt="AI Strategies" class="feature-icon">
+            <h3>AI Strategies</h3>
+            <p>Get personalized yield opportunities with APY and risk insights, powered by AURA.</p>
+          </div>
+          <div class="card feature">
+            <img src="assets/features/risk.svg" alt="Risk Insights" class="feature-icon">
+            <h3>Risk Insights</h3>
+            <p>Monitor risks with AI-driven alerts and contextual notes before you take action.</p>
+          </div>
+          <div class="card feature">
+            <img src="assets/features/ux.svg" alt="Seamless UX" class="feature-icon">
+            <h3>Seamless UX</h3>
+            <p>Works directly inside your wallet popup with a fast, modern, responsive UI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="section alt">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Add Wallet Address</h4>
+              <p>Open AuraLens, add or select your EVM wallet address inside the Wallets modal.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Analyze with AURA</h4>
+              <p>Aura fetches balances and strategies from AdEx AURA to build insights.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>See Insights & Act</h4>
+              <p>Review AI strategies with risks, APY, and notes. Take action when ready.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="demo" class="section">
+      <div class="container">
+        <h2 class="section-title">See AuraLens in Action</h2>
+        <div class="demo-wrap card">
+          <div class="embed">
+            <!-- Placeholder GIF if no video URL -->
+            <img src="assets/demo.gif" alt="AuraLens Demo" class="demo-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section id="install" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Installation</h2>
+        <div class="install-grid">
+          <ol class="install-steps">
+            <li>Download/clone the AuraLens repository</li>
+            <li>Open <code>chrome://extensions</code></li>
+            <li>Enable Developer Mode</li>
+            <li>Click "Load unpacked" and select the <code>extension/</code> folder</li>
+          </ol>
+          <div class="install-visual card">
+            <div class="install-placeholder">Extension Setup Screenshot</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">© 2025 AuraLens Team – Built for AdEx Aura Hackathon.</div>
+      <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">Hackathon Submission</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
+
