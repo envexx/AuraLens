@@ -1,8 +1,19 @@
 ﻿# AuraLens – DeFi Portfolio Companion (Chrome Extension)
 
-AuraLens menganalisis portofolio DeFi Anda menggunakan AdEx AURA dan merekomendasikan strategi yang dapat ditindaklanjuti (APY, risiko, catatan) langsung di popup wallet.
+<div align="center">
+  <img src="assets/logo.svg" alt="AuraLens" width="140" height="140" />
+  <br/>
+  <em>AI‑assisted DeFi portfolio insights and strategy recommendations powered by AdEx AURA.</em>
+</div>
 
-## Struktur Folder
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Manifest%20V3-orange.svg)](https://developer.chrome.com/docs/extensions/mv3/)
+[![Tech](https://img.shields.io/badge/Canvas-Chart-blue.svg)](#)
+[![AURA API](https://img.shields.io/badge/Powered%20by-AdEx%20AURA-1E40AF.svg)](https://aura.adex.network)
+
+AuraLens analyzes your DeFi portfolio using AdEx AURA and presents clear, actionable strategy cards (APY, risk, notes) directly in the wallet popup.
+
+## Folder Structure
 
 ```
 extension/
@@ -18,54 +29,50 @@ extension/
   README.md
 ```
 
-## Fitur Utama
-- Manifest V3, UI modern dengan Inter, Light/Dark mode
-- Tema aksen blue-dark; ikon header adaptif terhadap tema
-- Modal Wallets: tambah, pilih aktif, hapus (persisten via `chrome.storage.local`)
-- Persistensi `activeWalletIndex` agar wallet aktif bertahan setelah reload
-- Integrasi AdEx AURA API:
-  - `GET /api/portfolio/balances` untuk token + `balanceUSD`
-  - `GET /api/portfolio/strategies` untuk rekomendasi strategi
+## Features
+- MV3 popup UI (Inter), Light/Dark themes, blue‑dark accent
+- Wallets modal: add, select active, remove (persisted via `chrome.storage.local`)
+- Persists `activeWalletIndex` and theme
+- AURA integration:
+  - `GET /api/portfolio/balances` (tokens with `balanceUSD`)
+  - `GET /api/portfolio/strategies` (recommended strategies)
   - Host permission: `https://aura.adex.network/*`
-- Grafik portfolio doughnut (canvas custom, tanpa dependensi eksternal) dari top tokens `balanceUSD`
-- Tab Strategies (terstruktur dan mudah dibaca):
-  - Judul + badge risiko (low/moderate/high/opportunistic)
-  - Chips berwarna: APY, Platforms, Networks, Operations
-  - Note ditampilkan pada kotak khusus (terpisah dari chips)
-  - Loading skeleton + error state (tanpa dummy saat gagal)
-- Tab Assets: daftar token terurut `balanceUSD` dengan jumlah token dan nilai USD
-- `#mainApp` scrollable; chart diperbesar agar lebih jelas
+- Doughnut portfolio chart (custom Canvas, no external libs) from top `balanceUSD` tokens
+- Strategy cards: risk badge, colored chips (APY, Platforms, Networks, Operations), separate Note box
+- Loading skeletons and error state; no dummy data in production
+- Assets tab: tokens sorted by USD with amount and USD value
+- Scrollable `#mainApp`; larger, readable chart
 
-## Instalasi (Chrome/Edge)
-1) Buka `chrome://extensions` (Edge: `edge://extensions`)
-2) Aktifkan Developer mode
-3) Klik “Load unpacked” → pilih folder `extension/`
-4) Pin ekstensi lalu buka popup
+## Install (Chrome/Edge)
+1) Open `chrome://extensions` (Edge: `edge://extensions`)
+2) Enable Developer mode
+3) Click “Load unpacked” → select `extension/`
+4) Pin the extension and open the popup
 
 Permissions:
 - `storage` (menyimpan wallets & preferensi tema)
 - `https://aura.adex.network/*` (fetch balances & strategies)
 
-## Penggunaan
-1) Klik ikon wallet di header → modal Wallets
-2) Add alamat (0x...), lalu Select untuk menetapkan sebagai aktif
-3) Lihat doughnut chart, Assets, dan Strategies ter-update otomatis dari AURA
-4) Buka DevTools popup (Right click → Inspect) untuk log:
+## Usage
+1) Click the wallet icon → Wallets modal
+2) Add an address (0x...), then Select to set active
+3) Doughnut chart, Assets, and Strategies update automatically from AURA
+4) Open popup DevTools (Right click → Inspect) to see logs:
    - `[AURA] Balances response: …`
    - `[AURA] Strategies response: …`
 
-## Pengembangan
-- Tidak ada build step; edit langsung file berikut:
+## Development
+- No build step; edit directly:
   - UI: `popup/popup.html`, `styles/popup.css`
-  - Logika/API: `scripts/popup.js`
-- Chart adalah canvas renderer lokal (tanpa Chart.js)
-- Opsi API key: bisa ditambahkan kemudian ke settings dan diteruskan ke fungsi fetch (`apiKey` opsional)
+  - Logic/API: `scripts/popup.js`
+- Canvas chart renderer (no Chart.js)
+- Optional: wire an API key in Settings and forward via fetch (`apiKey`)
 
 ## Troubleshooting
-- Chart kosong: pastikan wallet aktif telah dipilih dan API AURA dapat diakses
-- Tidak ada data strategi/balances: cek console popup untuk HTTP status (429/500) atau rate limit
-- Izin host: pastikan `https://aura.adex.network/*` ada pada `manifest.json`
+- Empty chart: ensure an active wallet is selected and AURA API is reachable
+- Missing data: check popup console for HTTP errors (429/500) or rate limit
+- Host permission: ensure `https://aura.adex.network/*` is in `manifest.json`
 
-## Lisensi
+## License
 MIT
 
